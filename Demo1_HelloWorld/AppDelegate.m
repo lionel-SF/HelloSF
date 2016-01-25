@@ -12,6 +12,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  //注册通知
+  [[UIApplication sharedApplication] registerForRemoteNotifications];
+  UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert categories:nil];
+  [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+  
+//  [[UIApplication sharedApplication] scheduleLocalNotification:nil];
+
     //时机：当应用程序启动后，最先执行
     //做什么：设置应用程序的第一个启动界面什么样
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
