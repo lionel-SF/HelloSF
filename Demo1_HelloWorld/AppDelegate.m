@@ -1,7 +1,7 @@
 //
 //  AppDelegate.m
 //  Demo1_HelloWorld
-//
+// This is test for git
 //  Created by tarena on 15-5-4.
 //  Copyright (c) 2015年 tarena. All rights reserved.
 //
@@ -16,10 +16,12 @@
     //做什么：设置应用程序的第一个启动界面什么样
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
+  self.viewController = [[UIViewController alloc] init];
+  self.window.rootViewController = self.viewController;
     UILabel *label = [[UILabel alloc]init];
     label.frame = CGRectMake(200, 100, 200, 200);
     label.text = @"Hello World";
-    [self.window addSubview:label];
+    [self.viewController.view addSubview:label];
     [self.window makeKeyAndVisible];
     return YES;
 }
